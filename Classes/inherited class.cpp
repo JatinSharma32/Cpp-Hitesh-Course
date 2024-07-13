@@ -5,23 +5,28 @@ class Base
 {
 private:
     int _hello = 0;
+    string name;
     void _printhello()
     {
-        cout << "Base class private function";
+        cout << "Base class private function" << "\n";
     }
 
 protected:
     int GF = 0;
     void printGF()
     {
-        cout << "Base class protected function";
+        cout << "Base class protected function" << "\n";
     }
 
 public:
+    Base(string name)
+    {
+        this->name = name;
+    }
     int family = 0;
     void printfamily()
     {
-        cout << "Base class public function";
+        cout << this->name << " : Base class public function" << "\n";
     }
 
     Base() {}
@@ -30,6 +35,10 @@ public:
 class DerivedClass : Base
 {
 public:
+    DerivedClass(string n) : Base(n)
+    {
+        cout << "Name is " << n << "\n";
+    }
     void fun()
     {
         printGF();
@@ -43,7 +52,7 @@ public:
 int main()
 {
 
-    DerivedClass d;
+    DerivedClass d("jatin");
     d.fun();
     return 0;
 }
