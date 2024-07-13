@@ -19,12 +19,14 @@ int main()
     }
 
     // How to remove element from vector
-    vectorArray.pop_back();
+    // vectorArray.pop_back();
 
     // how to Itterate over vectors using int itterator
     for (int i = 0; i < vectorArray.size(); i++)
     {
         cout << vectorArray[i] << '\n';
     }
+
+    cout << "Hey: " << *(vectorArray.end() - 1) << "\n";
     return 0;
 }
